@@ -18,7 +18,7 @@ export const initialState = [
 
 
 export const reducer = (state, action) => {
-    console.log(state, action);
+    // console.log(state, action);
     switch (action.type) {
         case 'ADD_TASK':
             return [
@@ -29,6 +29,15 @@ export const reducer = (state, action) => {
                     id: Date.now()
                 }
             ]
+        case 'TOGGLE_TASK':
+            return state.map(todo => {
+                console.log(todo.id, action.payload);
+                if (todo.id === action.payload) {
+                    return {...todo, completed: !todo.completed}     
+                }else{
+                    return todo;
+                }
+            })
         default:
             return state;
     }

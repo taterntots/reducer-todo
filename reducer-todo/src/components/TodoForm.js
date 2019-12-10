@@ -4,7 +4,6 @@ const TodoForm = (props) => {
     const [inputText, setInputText] = useState('');
 
     const handleChanges = event => {
-        event.preventDefault();
         // props.dispatch({ type: 'ADD_TASK' });
         setInputText(event.target.value);
     }
@@ -16,6 +15,7 @@ const TodoForm = (props) => {
                     className='inputBar' 
                     type='text' 
                     name='task' 
+                    value={inputText}
                     placeholder='...add task' 
                     autoComplete='off' 
                     onChange={handleChanges}
