@@ -3,7 +3,9 @@ import React from 'react';
 const Todo = props => {
     // console.log(props.task.id);
     return (
-        <div onClick={() => props.dispatch({ type: 'TOGGLE_TASK', payload: props.task.id })}>
+        <div className= {`task ${props.task.completed ? 'completed' : ''}`} 
+        onClick={() => 
+            props.dispatch({ type: 'TOGGLE_TASK', payload: props.task.id })}>
             <p>{props.task.item}</p>
         </div>
     )

@@ -29,6 +29,15 @@ const TodoForm = (props) => {
                 >
                     Add
                 </button>
+                <button 
+                    className='buttons'
+                    onClick={(event) => {
+                        event.preventDefault();
+                        props.dispatch({ type: 'CLEAR_TASK' });
+                    }}
+                >
+                    Clear
+                </button>
             </form>
         </div>
     )
